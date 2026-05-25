@@ -1,0 +1,38 @@
+.canvas-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow:
+    0 0 0 1px rgba(255, 165, 0, 0.25),
+    0 0 40px rgba(255, 140, 0, 0.06),
+    inset 0 0 60px rgba(0, 0, 0, 0.6);
+  transition: box-shadow 0.3s ease;
+}
+
+.canvas-wrapper:hover {
+  box-shadow:
+    0 0 0 1px rgba(255, 165, 0, 0.5),
+    0 0 60px rgba(255, 140, 0, 0.12),
+    inset 0 0 60px rgba(0, 0, 0, 0.6);
+}
+
+.drawing-canvas {
+  display: block;
+  width: 280px;
+  height: 280px;
+  cursor: crosshair;
+  touch-action: none; /* prevent scroll during drawing */
+  background: #000;
+}
+
+/* Subtle grid overlay for the "graph-paper" technical look */
+.canvas-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 140, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 140, 0, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
